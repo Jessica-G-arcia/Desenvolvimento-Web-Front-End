@@ -5,6 +5,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { PostDetail1Component } from './post-detail1/post-detail1.component';
+import { PostDetail2Component } from './post-detail2/post-detail2.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,7 +14,7 @@ export const routes: Routes = [
         children: [
             {path: 'post-detail', component: PostDetailComponent},
             {path: 'post-detail1', component: PostDetail1Component},
-            
+            {path: 'post-detail2', component: PostDetail2Component}
         ]
     },
     {path: 'about', component: AboutComponent},
