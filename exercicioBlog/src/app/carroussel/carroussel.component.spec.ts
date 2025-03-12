@@ -1,23 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { CarrousselComponent } from './carroussel.component';
-
-describe('CarrousselComponent', () => {
-  let component: CarrousselComponent;
-  let fixture: ComponentFixture<CarrousselComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [CarrousselComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(CarrousselComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+	selector: 'ngbd-carousel-basic',
+	imports: [NgbCarouselModule],
+	templateUrl: './carousel-basic.html',
+})
+export class NgbdCarouselBasic {
+	images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+}
