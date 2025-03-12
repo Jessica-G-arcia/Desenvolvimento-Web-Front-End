@@ -1,35 +1,53 @@
-<div class="fluid-contaneir mt-3">
-    <h2>"Descubra o Sabor da Saúde!"</h2>
-    <app-carroussel></app-carroussel>
+<div class="fluid-contaneir">
+    <section class="py-0 container">
+        <div class="row py-lg-4">
+          <div class="col-lg-12 col-md-8 mx-auto">
+            <h1 class="fw-light">Olá!</h1>
+            <p class="lead text-body-secondary">Bem-vindo ao Essência Natural! Aqui celebramos a arte de cozinhar com alimentos naturais e saudáveis.<br>Veja abaixo o que você encontra por aqui.</p>
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li><b>Pratos Principais</b></li>
+                    <li><b>Sobremesas Saudáveis</b></li>
+                    <li><b>Snacks Naturais</b></li>
+                    <li><b>Bebidas Detox</b></li>
+                </ul>
+            <p><br>         
+              <a class="btn btn-primary" routerLink="post-list" routerLinkActive="active">Ver Receitas</a>  <!-- ESTE BOTÃO ESTÁ COM A ROTA ERRADA PARA ABRIR A PÁGINA DE ERRO -->
+            </p>
+          </div>
+        </div>
+      </section>
+    
     <ngb-carousel>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
-                <img src="img/Brownie Fit de Batata Doce.png" alt="">
+                <img src="img/bowl-carrossel.jpeg" width="100%" height="600" alt="">
             </div>
-            <div class="carousel-caption">
-                <h3>BYD Seagull</h3>
-                <p>Novo carro elétrico ‘baratinho’ da BYD custa menos de R$ 46 mil. <br>Venha já aproveitar!</p>
-            </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-                <img src="img/Smoothie Energizante de Frutas Vermelhas.png" alt="">
-            </div>
-            <div class="carousel-caption">
-                <h3>BYD Song Plus</h3>
-                <p>O SUV híbrido plug-in mais barato do Brasil. A partir de R$ 270 mil.<br> Garanta já o seu!</p>
+            <div class="carousel-caption bg-black" style="opacity: 0.8; border-radius: 15px;">
+                <h3>Delícias Naturais: Experimente Hoje!</h3>
+                <p>Descubra as receitas mais populares da semana! Todas feitas com ingredientes frescos, naturais e cheios de sabor.</p>
             </div>
         </ng-template>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
-                <img src="img/Bowl Colorido com Quinoa e Legumes.png" alt="">
+                <img src="img/Brownie-carrossel.jpeg" width="100%" height="600" alt="">
             </div>
-            <div class="carousel-caption">
-                <h3>BYD Seal</h3>
-                <p>Novo sedã híbrido plug-in é registrado no Brasil! A partir de R$ 299.800. <br> Corra e garanta o seu!</p>
+            <div class="carousel-caption bg-black" style="opacity: 0.8; border-radius: 15px;">
+                <h3>Novas Receitas Acabaram de Chegar!</h3>
+                <p>Inspire-se com as nossas criações mais recentes e traga mais saúde e sabor para a sua cozinha.</p>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img src="img/smothie-carrossel.jpeg" width="100%" height="600" alt="">
+            </div>
+            <div class="carousel-caption bg-black" style="opacity: 0.8; border-radius: 15px;">
+                <h3>Sabores da Temporada</h3>
+                <p>Aproveite os ingredientes frescos da estação com esta receita especial.</p>
             </div>
         </ng-template>
     </ngb-carousel>
+
+    
     
     
         
