@@ -1,1 +1,12 @@
-<p>home works!</p>
+<h1>Exemplo de interpolação</h1>
+<p>Número 1 = {{num1+num2}}</p>  <!-- dentro dos {{}} pode fazer o que quiser -->
+
+<h1>Exemplo de Property</h1>
+<img [src]="urlImagem" alt="" /> <!-- traz a url da imagem do ts -->
+
+<h1>Exemplo de Event binding</h1>
+<button class="btn btn-primary" (click)="somar()">Somar + 1</button> <!-- pega a função do ts quando clica no botão -->
+<p>Número 2 = {{num2}}</p>
+
+<h1>Exemplo Two Way Sequence binding</h1>
+<input name="num2" [(ngModel)]="num2" /> <!-- input já traz o valor do num2, se eu alterar o número no input, ela altera o num2 -->

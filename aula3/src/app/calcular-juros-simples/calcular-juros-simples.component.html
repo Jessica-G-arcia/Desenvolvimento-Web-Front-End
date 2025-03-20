@@ -1,0 +1,14 @@
+<h1>Calcular Juros Simples</h1>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="principal"><b>Valor Inicial</b></label>
+    <input class="form-control" type="number" name="principal" [(ngModel)]="principal">
+    <label class="form-label mt-3" for="taxa"><b>Taxa de juros ao mês</b></label>
+    <input class="form-control" type="number" name="taxa" [(ngModel)]="taxa">
+    <label class="form-label mt-3" for="tempo"><b>Número de meses</b></label>
+    <input class="form-control" type="number" name="tempo" [(ngModel)]="tempo">
+</div><br>
+<button class="btn btn-primary d-flex" (click)="montante()">Calcular Juros</button> 
+<br>
+<p>Juros Simples = R$ {{juros().toFixed(2).replace(".", ",")}}</p>
+<p>Valor Final após {{tempo}} meses = R$ {{montante().toFixed(2).replace(".", ",")}}</p>
+

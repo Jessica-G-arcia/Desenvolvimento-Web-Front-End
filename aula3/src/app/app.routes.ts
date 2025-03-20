@@ -6,6 +6,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
 import { TelaPaiComponent } from './tela-pai/tela-pai.component';
 import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
 import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
+import { CalcularJurosSimplesComponent } from './calcular-juros-simples/calcular-juros-simples.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'}, //redireciona para rota home quanto a url estiver null depois da /
@@ -18,5 +19,6 @@ export const routes: Routes = [
         {path: 'tela-filho2', component: TelaFilho2Component} 
     ]
     },
+    {path: 'calcular-juros-simples', component: CalcularJurosSimplesComponent},
     {path: '**', component: PaginaNaoEncontradaComponent}, //essa sempre precisa ser a última rota
 ];

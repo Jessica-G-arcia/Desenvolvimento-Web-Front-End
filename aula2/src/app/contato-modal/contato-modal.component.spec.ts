@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DestaquesComponent } from './destaques.component';
+import { ContatoModalComponent } from './contato-modal.component';
 
-describe('DestaquesComponent', () => {
-  let component: DestaquesComponent;
-  let fixture: ComponentFixture<DestaquesComponent>;
+describe('ContatoModalComponent', () => {
+  let component: ContatoModalComponent;
+  let fixture: ComponentFixture<ContatoModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DestaquesComponent]
+      imports: [ContatoModalComponent]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(DestaquesComponent);
+    
+    fixture = TestBed.createComponent(ContatoModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
