@@ -1,0 +1,12 @@
+<h1>Calcular IMC</h1>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="peso">Digite o seu peso</label>
+    <input class="form-control" type="number" name="peso" [(ngModel)]="peso">
+    <label class="form-label" for="altura">Digite a sua altura</label>
+    <input class="form-control" type="number" name="altura" [(ngModel)]="altura">
+</div><br>
+<button class="btn btn-primary d-flex mb-3" (click)="classificacao()">Calcular IMC</button> 
+
+<p>IMC = {{imc}}</p>
+<p>Classificação de IMC = {{classificacao()}}</p>
+

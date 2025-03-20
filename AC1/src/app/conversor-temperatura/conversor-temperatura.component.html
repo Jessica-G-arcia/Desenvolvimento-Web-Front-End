@@ -1,0 +1,9 @@
+<h1>Converter temperatura</h1>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="celsius">Digite a temperatura em graus Celsius</label>
+    <input class="form-control" type="number" name="celsius" [(ngModel)]="celsius">
+</div><br>
+<button class="btn btn-primary d-flex mb-3" (click)="converter()">Converter</button> 
+
+<p>Fahrenheit (°F) = {{fah}}</p>
+<p>Kelvin (K) = {{kelvin}}</p>

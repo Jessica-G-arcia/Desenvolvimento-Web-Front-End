@@ -1,0 +1,16 @@
+<h1>Calcule aqui</h1>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="num1">Digite um número inteiro</label>
+    <input class="form-control" type="number" name="num1" [(ngModel)]="num1">
+    <label class="form-label" for="num2">Digite outro número inteiro</label>
+    <input class="form-control" type="number" name="num2" [(ngModel)]="num2">
+</div><br>
+
+<button class="btn btn-primary d-flex mb-3" (click)="calcular()">Calcular</button> 
+
+
+<p>Soma = {{soma()}}</p>
+<p>Subtração = {{subtracao()}}</p>
+<p>Divisão = {{divisao()}}</p>
+<p>Multiplicação = {{multiplicacao()}}</p>
+

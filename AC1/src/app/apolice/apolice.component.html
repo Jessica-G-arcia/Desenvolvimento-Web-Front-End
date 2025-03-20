@@ -1,0 +1,15 @@
+<h1>Cotar Seguro</h1>
+<h4>Digite os dados abaixo</h4>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="nome">Nome Completo</label>
+    <input class="form-control" type="text" name="nome" [(ngModel)]="nome">
+    <label class="form-label" for="genero">Gênero (M/F)</label>
+    <input class="form-control" type="text" name="genero" [(ngModel)]="genero">
+    <label class="form-label" for="idade">Idade</label>
+    <input class="form-control" type="number" name="idade" [(ngModel)]="idade">
+    <label class="form-label" for="valorauto">Valor do automóvel</label>
+    <input class="form-control" type="number" name="valorauto" [(ngModel)]="valorauto">
+</div><br>
+<button class="btn btn-primary d-flex mb-3" (click)="valorapolice()">Cotar Seguro</button> 
+
+<p>Valor da Apólice = {{valorapolice()}}</p>

@@ -1,0 +1,15 @@
+<h1>Calcular média</h1>
+<div class="d-flex flex-column col-2 mt-3">
+    <label class="form-label" for="nota1">Digite a nota da AC1</label>
+    <input class="form-control" type="number" name="ac1" [(ngModel)]="ac1">
+    <label class="form-label" for="nota1">Digite a nota da AC2</label>
+    <input class="form-control" type="number" name="ac2" [(ngModel)]="ac2">
+    <label class="form-label" for="nota1">Digite a nota da AG</label>
+    <input class="form-control" type="number" name="ag" [(ngModel)]="ag">
+    <label class="form-label" for="nota1">Digite a nota de AF</label>
+    <input class="form-control" type="number" name="af" [(ngModel)]="af">
+</div><br>
+<button class="btn btn-primary d-flex mb-3" (click)="media()">Calcular a média</button> 
+
+<p>Média = {{media()}}</p>
+<p>Situação = {{situacao()}}</p>
