@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-md-6">
+        <input type="checkbox" id="ckExibir" [(ngModel)]="exibirBanner" (change)="onCheckboxChange()">
+        <label for="ckExibir"> Exibir Banner</label>
+    </div>
+
+    <div class="col-12" *ngIf="exibirBanner">
+        <img height="auto" width="1500px" class="row" src="/cafuné-produtos.jpg">
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<h1>Veja aqui nossos produtos</h1>
+
+<div class="row">
+    <div class="col-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of produtos">
+                        <th scope="row">{{produto.id}}</th>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.preco}}</td>
+                        <td>{{produto.descricao}}</td>
+                        <td>
+                            <button [ngStyle]="{'background-color': produto.emEstoque==false?'gray':'light-blue'}" class="btn btn-primary border-0" (click)="abrirDetalhe(produto.id)" [disabled]="!produto.emEstoque">Comprar</button>   
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+    </div>
+</div>
