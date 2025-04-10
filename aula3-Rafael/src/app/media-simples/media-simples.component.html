@@ -1,0 +1,13 @@
+<h1>Média Simples</h1>
+<label for="nota1" class="form-label">Nota 1:</label>
+<input type="number" name="nota1" [(ngModel)]="nota1" class="form-control">
+<label for="nota2" class="form-label">Nota 2:</label>
+<input type="number" name="nota2" [(ngModel)]="nota2" class="form-control">
+<label for="nota3" class="form-label">Nota 3:</label>
+<input type="number" name="nota3" [(ngModel)]="nota3" class="form-control">
+<label for="nota4" class="form-label">Nota 4:</label>
+<input type="number" name="nota4" [(ngModel)]="nota4" class="form-control">
+<button (click)="calcularMedia()" class="btn btn-primary mt-2 mb-2">Calcular Média</button>
+<p>Média = {{media}}</p>
+<p>Situação = {{situacao}}</p>
+<p>Última média = {{ultimaMedia | json}}</p>
