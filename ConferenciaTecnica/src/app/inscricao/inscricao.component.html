@@ -1,0 +1,147 @@
+<div class="row">
+    <div class="header">
+        <h3>Inscricões Tech 2025</h3>
+    </div>
+    <div class="col-md-8">
+        <form [formGroup]="form" (ngSubmit)="salvar()">
+
+            <b><label for="nomeEvento" class="form-label">Evento</label></b>
+            <select formControlName="nomeEvento" class="form-control">
+                <option value="">Selecione um evento</option>
+                <option value="TechConf 2025">TechConf 2025</option>
+                <option value="Summit de Inovação">Summit de Inovação</option>
+                <option value="Angular World">Angular World</option>
+                <option value="Conexão Dev">Conexão Dev</option>
+            </select>
+            <div class="invalid"
+                *ngIf="form.get('nomeEvento')?.invalid && (form.get('nomeEvento')?.dirty || form.get('nomeEvento')?.touched)">
+                <div *ngIf="form.get('nomeEvento')?.errors?.['required']">
+                    Selecione o evento desejado
+                </div>
+            </div>
+            <br>
+            <label for="modalidade" class="form-label">Modalidade:</label>
+            <select formControlName="modalidade" class="form-control">
+                <option value="">Selecione uma modalidade</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Online">Online</option>
+            </select>
+            <div class="invalid"
+                *ngIf="form.get('modalidade')?.invalid && (form.get('modalidade')?.dirty || form.get('modalidade')?.touched)">
+                <div *ngIf="form.get('modalidade')?.errors?.['required']">
+                    A modalidade é obrigatória
+                </div>
+            </div>
+
+            <br>
+            <label for="dataInicio" class="form-label">Data de Início:</label>
+            <input type="date" formControlName="dataInicio" class="form-control">
+            <div class="invalid"
+                *ngIf="form.get('dataInicio')?.invalid && (form.get('dataInicio')?.dirty || form.get('dataInicio')?.touched)">
+                <div *ngIf="form.get('dataInicio')?.errors?.['required']">
+                    A data de início é obrigatória
+                </div>
+            </div>
+
+            <br>
+            <label for="dataFim" class="form-label">Data de Término:</label>
+            <input type="date" formControlName="dataFim" class="form-control">
+            <div class="invalid"
+                *ngIf="form.get('dataFim')?.invalid && (form.get('dataFim')?.dirty || form.get('dataFim')?.touched)">
+                <div *ngIf="form.get('dataFim')?.errors?.['required']">
+                    A data de término é obrigatória
+                </div>
+            </div>
+            <br>
+
+            <b>
+                <p>Participantes</p>
+            </b>
+            <div formArrayName="participantes">
+                <div *ngFor="let participante of participantes.controls; let i = index" [formGroupName]="i">
+                    <label for="nome_{{i}}" class="form-label">Nome Completo:</label>
+                    <input type="text" formControlName="nome" class="form-control">
+                    <div class="invalid"
+                        *ngIf="participante.get('nome')?.invalid && (participante.get('nome')?.dirty || participante.get('nome')?.touched)">
+                        <div *ngIf="participante.get('nome')?.errors?.['required']">
+                            O nome é obrigatório
+                        </div>
+                    </div>
+
+                    <br>
+                    <label for="email_{{i}}" class="form-label">E-mail:</label>
+                    <input type="email" formControlName="email" class="form-control">
+                    <div class="invalid"
+                        *ngIf="participante.get('email')?.invalid && (participante.get('email')?.dirty || participante.get('email')?.touched)">
+                        <div *ngIf="participante.get('email')?.errors?.['required']">E-mail é obrigatório</div>
+                        <div *ngIf="participante.get('email')?.errors?.['email']">E-mail inválido</div>
+                    </div>
+
+                    <br>
+                    <label for="cpf_{{i}}" class="form-label">CPF:</label>
+                    <input type="text" formControlName="cpf" class="form-control">
+                    <div class="invalid"
+                        *ngIf="participante.get('cpf')?.invalid && (participante.get('cpf')?.dirty || participante.get('cpf')?.touched)">
+                        <div *ngIf="participante.get('cpf')?.errors?.['required']">
+                            O CPF é obrigatório
+                        </div>
+                    </div>
+
+                    <br>
+                    <label for="tipoIngresso_{{i}}" class="form-label">Tipo de Ingresso:</label>
+                    <select formControlName="tipoIngresso" class="form-control">
+                        <option value="">Selecione o ingresso</option>
+                        <option value="Padrão">Padrão</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Estudante">Estudante</option>
+                    </select>
+                    <div class="invalid"
+                        *ngIf="participante.get('tipoIngresso')?.invalid && (participante.get('tipoIngresso')?.dirty || participante.get('tipoIngresso')?.touched)">
+                        <div *ngIf="participante.get('tipoIngresso')?.errors?.['required']">O tipo de ingresso é
+                            obrigatório</div>
+                    </div>
+
+                    <br>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-primary" (click)="adicionarParticipante()">Adicionar
+                            Participante</button>
+                        <button type="button" class="btn btn-secondary"
+                            (click)="removerParticipante(i)">Remover Participante</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <br>
+            <!-- <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                    <th>Nome Completo</th>
+                    <th>E-mail</th>
+                    <th>CPF</th>
+                    <th>Evento</th>
+                    <th>Modalidade</th>
+                    <th>Data Início</th>
+                    <th>Data Término</th>
+                    <th>Tipo de Ingresso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{form.nome}}</td>
+                        <td>{{form.email}}</td>
+                        <td>{{form.cpf}}</td>
+                        <td>{{form.nomeEvento}}</td>
+                        <td>{{form.modalidade}}</td>
+                        <td>{{form.dataInicio}}</td>
+                        <td>{{form.dataFim}}</td>
+                        <td>{{form.tipoIngresso}}</td>
+                    </tr>
+                </tbody>
+            </table> -->
+
+            <button type="submit" class="btn btn-primary mt-3" style="background-color: rgb(255, 106, 0); border: 0px;" [disabled]="!form.valid">Salvar inscrição</button>
+        </form>
+    </div>
+
+</div>

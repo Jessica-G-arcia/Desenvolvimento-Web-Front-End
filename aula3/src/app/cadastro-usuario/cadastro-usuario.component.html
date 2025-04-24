@@ -1,0 +1,40 @@
+<form #form="ngForm" (ngSubmit)="salvar()">
+    <label for="nome" class="form-label">Nome:</label>
+    <input type="text" name="nome" class="form-control" [(ngModel)]="usuario.nome" required>
+
+    <div *ngIf="form.submitted && form.controls['nome'].errors" class="invalid">
+        <div *ngIf="form.controls['nome'].errors['required']">Nome é obrigatório</div>
+    </div>
+
+
+    <label for="email" class="form-label">E-mail:</label>
+    <input type="text" name="email" class="form-control" [(ngModel)]="usuario.email" required email>
+
+    <div *ngIf="form.submitted && form.controls['email'].errors" class="invalid">
+        <div *ngIf="form.controls['email'].errors['required']">E-mail é obrigatório</div>
+        <div *ngIf="form.controls['email'].errors['email']">E-mail inválido</div>
+    </div>
+
+
+    <label for="senha" class="form-label">Senha:</label>
+    <input type="password" name="senha" class="form-control" [(ngModel)]="usuario.senha" required>
+
+    <div *ngIf="form.submitted && form.controls['senha'].errors" class="invalid">
+        <div *ngIf="form.controls['senha'].errors['required']">Senha é obrigatória</div>
+    </div>
+
+    <div class="d-flex gap-1">
+        <label for="ativo" class="form-label">Ativo:</label>
+        <input id="ativo" type="checkbox" name="ativo" class="form-check-input" [(ngModel)]="usuario.ativo">
+    <br>
+    </div>
+    
+
+
+    <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+    </div>
+    
+
+</form>
