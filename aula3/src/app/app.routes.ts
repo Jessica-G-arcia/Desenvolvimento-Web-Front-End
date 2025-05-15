@@ -11,6 +11,7 @@ import { ExemploDiretivaComponent } from './exemplo-diretiva/exemplo-diretiva.co
 import { TarefasComponent } from './tarefas/tarefas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'}, //redireciona para rota home quanto a url estiver null depois da /
@@ -28,5 +29,6 @@ export const routes: Routes = [
     {path: 'tarefas', component: TarefasComponent},
     {path: 'cadastro-usuario', component: CadastroUsuarioComponent},
     {path: 'cadastro-pessoa', component: CadastroPessoaComponent},
+    {path: 'produto', component: ProdutoComponent},
     {path: '**', component: PaginaNaoEncontradaComponent}, //essa sempre precisa ser a última rota
 ];
