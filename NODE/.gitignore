@@ -1,0 +1,60 @@
+# Dependências
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios temporários
+tmp/
+temp/
+
+# Diretórios de build
+dist/
+build/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ambiente
+.env
+.env.*.local
+
+# Cache do npm
+.npm/
+
+# Cache do Yarn
+.yarn/cache
+.pnp.*
+.yarn/install-state.gz
+
+# Arquivos do editor/IDE
+.vscode/
+.idea/
+
+# Arquivos do sistema
+*.swp
+*.swo
+
+# Cobertura de testes
+coverage/
+
+# Arquivos do PM2 (gerenciador de processos)
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos de exportação/importação
+*.tgz
+*.zip
+
+# Arquivos do TypeScript
+*.tsbuildinfo
+
+# Outros
+.eslintcache
