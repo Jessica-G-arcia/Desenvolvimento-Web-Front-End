@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 p-3">
+            <h2>ALUNOS - BIRD SCHOOL</h2>
+            <div>
+
+                <label for="editarAluno">Digite o RA</label>
+                <!-- <input type="text" class="form-control" id="editarAluno" [(ngModel)]="ra" placeholder="Digite o RA do aluno"> -->
+                <!-- <button class="btn btn-success" (click)="obterAlunos()">Listar Alunos</button> -->
+
+                <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">RA</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Disciplinas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(a of alunos; track $index) {
+                        <tr>
+                            <th scope="row">{{a.ra}}</th>
+                            <td>{{a.nome}}</td>
+                            @for(d of a.disciplinas; track $index) {
+                                <tr>{{d.codigo}} - {{d.nome}} - {{d.professor}}</tr>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            </div>
+            
+        </div>
+
+    </div>
+</div>
